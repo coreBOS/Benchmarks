@@ -23,13 +23,14 @@ class cbEventHandlerBench {
 	/**
 	* @Revs(1000)
 	* @Iterations(5)
-	* @Assert("mode(variant.time.avg) < 4 ms")
+	* @Assert("mode(variant.time.avg) < 3.4 ms")
 	*/
 	public function benchdoActionNonAdmin() {
 		global $current_user, $currentModule;
 		$currentModule = 'Accounts';
 		$user = new Users();
 		$user->retrieveCurrentUserInfoFromFile($this->usrdota0x);
+		$current_user = $user;
 		ob_start();
 		cbEventHandler::do_action('corebos.header');
 		cbEventHandler::do_action('corebos.footer');
