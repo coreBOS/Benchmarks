@@ -1,0 +1,4 @@
+{
+    "runner.file_pattern": "*Bench.php",
+    "runner.path": "./"
+}

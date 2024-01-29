@@ -6,15 +6,16 @@ coreBOS infrastructure for benchmark performance analysis based on [PHPBench](ht
 - create a benchmark script following the [PHPBench documentation guidelines](https://phpbench.readthedocs.io/) and include at the top of the script the `loadcorebos.php` script to have access to all the coreBOS infrastructure
 - I recommend creating the same directory structure we have in the application to match the scripts and find them easily like we do in the unit test project
 - run the benchmark with `build/evBench/phpbench.phar run build/evBench/{path to script} --report=aggregate`
+- to run all the benchmarks use `build/evBench/phpbench.phar run --config=$PWD/build/evBench/phpbench.json --report=aggregate`
 
 ### Example
 
-You can see an example of benchmarking the `getCurrencyName` and `popup_from_html` functions in the script `build/evBench/include/utils/CommonUtils.php`, which would be executed, from the root of your coreBOS install, with this command
+You can see an example of benchmarking the `getCurrencyName` and `popup_from_html` functions in the script `build/evBench/include/utils/CommonUtilsBench.php`, which would be executed, from the root of your coreBOS install, with this command
 
-`build/evBench/phpbench.phar run build/evBench/include/utils/CommonUtils.php --report=aggregate`
+`build/evBench/phpbench.phar run build/evBench/include/utils/CommonUtilsBench.php --report=aggregate`
 
 ```shell
-joe@joebordes:/var/www/coreBOSNG$ build/evBench/phpbench.phar run build/evBench/include/utils/CommonUtils.php --report=aggregate 
+joe@joebordes:/var/www/coreBOSNG$ build/evBench/phpbench.phar run build/evBench/include/utils/CommonUtils.php --report=aggregate
 PHPBench (1.2.10) running benchmarks... #standwithukraine
 with PHP version 8.2.7, xdebug ✔, opcache ❌
 
